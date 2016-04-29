@@ -11,8 +11,7 @@
 	https://github.com/D4RKONION/bobbot/blob/master/bobbot.php
 	// */
 
-	// $bottoken = "207919843:AAEeFkhsaHGDykH5T_uRX7O8jLsvag6Nle8";
-	$bottoken = "207919843:AAEeFkhsaHGDykH5T_uRX7O8jLsvag6Nle8";
+	$bottoken = "190431457:AAHYkaA3x4P1SSH0pAVVyE61mNO7tfev1mw";
 	$website = "https://api.telegram.org/bot".$bottoken;
 	
 	// $update = file_get_contents($website. "/getupdates?offset=0");
