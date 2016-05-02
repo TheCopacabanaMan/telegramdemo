@@ -7,6 +7,13 @@ if(!$update)
   exit;
 }
 
+  // mando la stringa ricevuta al server web
+  $destination_url = "http://confienza.between.it/telegramdemo/register.php";
+  $parameters = "?stringa=". $content;
+  $handle = curl_init($destination_url . $parameters );
+  $result = curl_exec($handle);
+
+
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
