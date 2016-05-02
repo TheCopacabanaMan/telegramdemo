@@ -26,8 +26,8 @@ $parse_mode = "Markdown";
 if ( $text == "/start" || $text == "/help" ) {
   $response_message = "Questo bot mostra le news, le offerte e la ricerca personale di Ermesto Spa";
   $response_message .= "<br /><br />";
-  $response_message .= "Comandi:";
   /*
+  $response_message .= "Comandi:";
   $response_message .= "<br /><br />";
   $response_message .= "<b>/start</b> - Mostra l'help" . "<br />";
   $response_message .= "<b>/news</b> - Mostra le news" . "<br />";
