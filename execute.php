@@ -34,11 +34,9 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
   $response_message .= "<a href='/offerte'>/offerte</a> - Mostra le offerte" . "\n";
   $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";  // */
-
-  header("Content-Type: application/json");
-  
 }  
 
+  header("Content-Type: application/json");
   $parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
   $parameters["method"] = "sendMessage";
   echo json_encode($parameters);
