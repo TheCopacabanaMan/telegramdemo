@@ -22,8 +22,13 @@ $text = strtolower($text);
 
 $response_message = "Ciccio";
 
-if ( $text == "/start") {
-  $response_message = "You asked start";
+if ( $text == "/start" || $text == "/help" ) {
+  $response_message = "Questo bot mostra le news, le offerte e la ricerca personale di Ermesto Spa";
+  $response_message .= "<br /><br />";
+  $response_message .= "Comandi:";
+  $response_message .= "<br /><br />";
+  $response_message .= "<b>/start</b> - Mostra l'help";
+  $response_message .= "<br />";
 }  
 
 header("Content-Type: application/json");
