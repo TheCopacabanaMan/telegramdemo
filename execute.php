@@ -21,7 +21,6 @@ $text = isset($message['text']) ? $message['text'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
-/*
   // mando la stringa ricevuta al server web
   $destination_url = "http://confienza.between.it/telegramdemo/register.php?first_name=". urlencode($firstname) ."&last_name=". urlencode($lastname) ."&command=". urlencode($text);
   $result_from_server_confienza = file_get_contents($destination_url);
@@ -47,7 +46,7 @@ if ( $text == "/news" || $text == "/ricerca") {
   $parse_mode = "HTML";
   $response_message = $result_from_server_confienza;
 }
-// */
+
   header("Content-Type: application/json");
   $parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
   $parameters["method"] = "sendMessage";
