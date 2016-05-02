@@ -24,21 +24,23 @@ $response_message = "Ciccio";
 $parse_mode = "Markdown";
 
 if ( $text == "/start" || $text == "/help" ) {
+  $parse_mode = "HTML";
+
   $response_message = "Questo bot mostra le news, le offerte e la ricerca personale di Ermesto Spa";
   $response_message .= "\n\n";
   $response_message .= "Comandi:";
   $response_message .= "\n";
-  $response_message .= "<strong>/start</strong> - Mostra l'help" . "\n";
-  $response_message .= "<strong>/news</strong> - Mostra le news" . "\n";
-  $response_message .= "<strong>/offerte</strong> - Mostra le offerte" . "\n";
-  $response_message .= "<strong>/ricerca</strong> - Mostra la ricerca personale" . "\n";  // */
+  $response_message .= "<a href='/start'>/start</a> - Mostra l'help" . "\n";
+  $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
+  $response_message .= "<a href='/offerte'>/offerte</a> - Mostra le offerte" . "\n";
+  $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";  // */
+
+  header("Content-Type: application/json");
   
-   $parse_mode = "HTML";
 }  
 
-header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
-$parameters["method"] = "sendMessage";
-echo json_encode($parameters);
+  $parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
+  $parameters["method"] = "sendMessage";
+  echo json_encode($parameters);
 
 ?>
