@@ -39,7 +39,6 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<a href='/start'>/start</a> - Mostra l'help" . "\n";
   $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
   $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";
-  $response_message .= "(ho ricevuto: '". $result_from_server_confienza ."')\n";
 }  
 
 if ( $text == "/news" || $text == "/ricerca") {
