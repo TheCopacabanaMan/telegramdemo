@@ -11,9 +11,9 @@ if(!$update)
   $destination_url = "http://confienza.between.it/telegramdemo/register.php";
   $parameters = "?stringa=". $content;
   $handle = curl_init($destination_url . $parameters );
-	curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5);
-	curl_setopt($handle, CURLOPT_TIMEOUT, 60);  
+  curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5);
+  curl_setopt($handle, CURLOPT_TIMEOUT, 60);  
   $result = curl_exec($handle);
 
 
@@ -43,7 +43,8 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<a href='/start'>/start</a> - Mostra l'help" . "\n";
   $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
   $response_message .= "<a href='/offerte'>/offerte</a> - Mostra le offerte" . "\n";
-  $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";  // */
+  $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";
+  $response_message .= "\n(ho ricevuto: '". $result ."')\n";
 }  
 
   header("Content-Type: application/json");
