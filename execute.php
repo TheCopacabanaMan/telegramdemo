@@ -1,8 +1,5 @@
 <?php
 $content = file_get_contents("php://input");
-  // mando la stringa ricevuta al server web
-  $destination_url = "http://confienza.between.it/telegramdemo/register.php?stringa=". $content;
-  $result = file_get_contents($destination_url);
 $update = json_decode($content, true);
 
 if(!$update)
@@ -25,19 +22,23 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
+  // mando la stringa ricevuta al server web
+  $destination_url = "http://confienza.between.it/telegramdemo/register.php?first_name=". $firstname ."&last_name=". $lastname ."&command=". $text;
+  $result = file_get_contents($destination_url);
+
+
 $response_message = "Ciccio";
 $parse_mode = "Markdown";
 
 if ( $text == "/start" || $text == "/help" ) {
   $parse_mode = "HTML";
 
-  $response_message = "Questo bot mostra le news, le offerte e la ricerca personale di Ermesto Spa";
+  $response_message = "Questo bot mostra le news e la ricerca personale di Ermesto Spa";
   $response_message .= "\n\n";
   $response_message .= "Comandi:";
   $response_message .= "\n";
   $response_message .= "<a href='/start'>/start</a> - Mostra l'help" . "\n";
   $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
-  $response_message .= "<a href='/offerte'>/offerte</a> - Mostra le offerte" . "\n";
   $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";
   $response_message .= "(ho mandato: '". $destination_url ."')\n";
   $response_message .= "(ho ricevuto: '". $result ."')\n";
