@@ -34,7 +34,7 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<b>/offerte</b> - Mostra le offerte" . "<br />";
   $response_message .= "<b>/ricerca</b> - Mostra la ricerca personale" . "<br />";  // */
   
-  $parse_mode = "HTML";
+  // $parse_mode = "HTML";
 }  
 
 header("Content-Type: application/json");
