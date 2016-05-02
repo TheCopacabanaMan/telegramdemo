@@ -39,7 +39,8 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
   $response_message .= "<a href='/offerte'>/offerte</a> - Mostra le offerte" . "\n";
   $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";
-  $response_message .= "\n(ho ricevuto: '". $result ."')\n";
+  $response_message .= "(ho mandato: '". $destination_url ."')\n";
+  $response_message .= "(ho ricevuto: '". $result ."')\n";
 }  
 
   header("Content-Type: application/json");
