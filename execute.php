@@ -25,16 +25,15 @@ $parse_mode = "Markdown";
 
 if ( $text == "/start" || $text == "/help" ) {
   $response_message = "Questo bot mostra le news, le offerte e la ricerca personale di Ermesto Spa";
-  $response_message .= "<br /><br />";
-  /*
+  $response_message .= "\n\n";
   $response_message .= "Comandi:";
-  $response_message .= "<br /><br />";
-  $response_message .= "<b>/start</b> - Mostra l'help" . "<br />";
-  $response_message .= "<b>/news</b> - Mostra le news" . "<br />";
-  $response_message .= "<b>/offerte</b> - Mostra le offerte" . "<br />";
-  $response_message .= "<b>/ricerca</b> - Mostra la ricerca personale" . "<br />";  // */
+  $response_message .= "\n";
+  $response_message .= "<b>/start</b> - Mostra l'help" . "\n";
+  $response_message .= "<b>/news</b> - Mostra le news" . "\n";
+  $response_message .= "<b>/offerte</b> - Mostra le offerte" . "\n";
+  $response_message .= "<b>/ricerca</b> - Mostra la ricerca personale" . "\n";  // */
   
-  // $parse_mode = "HTML";
+   $parse_mode = "HTML";
 }  
 
 header("Content-Type: application/json");
