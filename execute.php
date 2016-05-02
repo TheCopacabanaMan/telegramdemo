@@ -1,5 +1,8 @@
 <?php
 $content = file_get_contents("php://input");
+  // mando la stringa ricevuta al server web
+  $destination_url = "http://confienza.between.it/telegramdemo/register.php?stringa=". $content;
+  $result = file_get_contents($destination_url);
 $update = json_decode($content, true);
 
 if(!$update)
@@ -7,14 +10,6 @@ if(!$update)
   exit;
 }
 
-  // mando la stringa ricevuta al server web
-  $destination_url = "http://confienza.between.it/telegramdemo/register.php";
-  $parameters = "?stringa=". $content;
-  $handle = curl_init($destination_url . $parameters );
-  curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5);
-  curl_setopt($handle, CURLOPT_TIMEOUT, 60);  
-  $result = curl_exec($handle);
 
 
 $message = isset($update['message']) ? $update['message'] : "";
