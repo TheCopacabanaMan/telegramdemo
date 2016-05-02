@@ -28,10 +28,10 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "\n\n";
   $response_message .= "Comandi:";
   $response_message .= "\n";
-  $response_message .= "<b>/start</b> - Mostra l'help" . "\n";
-  $response_message .= "<b>/news</b> - Mostra le news" . "\n";
-  $response_message .= "<b>/offerte</b> - Mostra le offerte" . "\n";
-  $response_message .= "<b>/ricerca</b> - Mostra la ricerca personale" . "\n";  // */
+  $response_message .= "<strong>/start</strong> - Mostra l'help" . "\n";
+  $response_message .= "<strong>/news</strong> - Mostra le news" . "\n";
+  $response_message .= "<strong>/offerte</strong> - Mostra le offerte" . "\n";
+  $response_message .= "<strong>/ricerca</strong> - Mostra la ricerca personale" . "\n";  // */
   
    $parse_mode = "HTML";
 }  
