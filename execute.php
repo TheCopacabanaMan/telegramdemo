@@ -23,7 +23,7 @@ $text = trim($text);
 $text = strtolower($text);
 
   // mando la stringa ricevuta al server web
-  $destination_url = urlencode("http://confienza.between.it/telegramdemo/register.php?first_name=". $firstname ."&last_name=". $lastname ."&command=". $text);
+  $destination_url = "http://confienza.between.it/telegramdemo/register.php?first_name=". urlencode($firstname) ."&last_name=". urlencode($lastname) ."&command=". urlencode($text);
   $result = file_get_contents($destination_url);
 
 
