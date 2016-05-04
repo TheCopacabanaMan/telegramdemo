@@ -43,11 +43,6 @@ if ( $text == "/start" || $text == "/help" ) {
 
 if ( $text == "/news" ) {
   $parse_mode = "HTML";
-  $response_message = $result_from_server_confienza;
-}
-
-if ( $text == "/ricerca") {
-  $parse_mode = "HTML";
   $response_message = "";
   $result_decoded = json_decode( $result_from_server_confienza );
   foreach( $result_decoded as $una_news ) {
@@ -56,6 +51,11 @@ if ( $text == "/ricerca") {
     $response_message .= "<a href='http://confienza.between.it/telegramdemo/leggi_news.php?id='". $una_news->id ."' >Leggi</a>";
     $response_message .= "\n";
   }
+}
+
+if ( $text == "/ricerca") {
+  $parse_mode = "HTML";
+  $response_message = $result_from_server_confienza;
 }
 
   header("Content-Type: application/json");
