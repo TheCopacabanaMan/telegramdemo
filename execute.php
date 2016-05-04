@@ -52,7 +52,7 @@ if ( $text == "/news" ) {
     $response_message .= "<a href='http://confienza.between.it/telegramdemo/leggi_news.php?id='". $una_news->id ."' >Leggi</a>";
     $response_message .= "\n";
   }  // */
-  $response_message = $result_from_server_confienza;
+  $response_message = print_r( $result_decoded );
 }
 
 if ( $text == "/ricerca") {
