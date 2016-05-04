@@ -49,9 +49,7 @@ if ( $text == "/news" ) {
   foreach( $result_decoded as $una_news ) {
     $response_message .= $una_news->data;
     $response_message .= " <b>". $una_news->titolo ."</b> ";
-    /*
-    $response_message .= "<a href='http://confienza.between.it/telegramdemo/leggi_news.php?id='". $una_news->id ."' >Leggi</a>";  
-    // */
+    $response_message .= "<a href='http://confienza.between.it/telegramdemo/leggi_news.php?id=". $una_news->id ."' >Leggi</a>";  
     $response_message .= "\n";  
   }  
 }
