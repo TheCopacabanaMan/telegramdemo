@@ -41,9 +41,21 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";
 }  
 
-if ( $text == "/news" || $text == "/ricerca") {
+if ( $text == "/news" ) {
   $parse_mode = "HTML";
   $response_message = $result_from_server_confienza;
+}
+
+if ( $text == "/ricerca") {
+  $parse_mode = "HTML";
+  $response_message = "";
+  $result_decoded = json_decode( $result_from_server_confienza );
+  foreach( $result_decoded as $una_news ) {
+    $response_message .= $una_news->data;
+    $response_message .= " <b>". $una_news->titolo ."</b> ";
+    $response_message .= "<a href='http://confienza.between.it/telegramdemo/leggi_news.php?id='". $una_news->id ."' >Leggi</a>";
+    $response_message .= "\n";
+  }
 }
 
   header("Content-Type: application/json");
