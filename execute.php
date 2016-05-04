@@ -25,7 +25,7 @@ $text = strtolower($text);
   $destination_url = "http://confienza.between.it/telegramdemo/register.php?first_name=". urlencode($firstname) ."&last_name=". urlencode($lastname) ."&command=". urlencode($text);
   $result_from_server_confienza = file_get_contents($destination_url);
 
-
+// mettiamo un messaggio di default
 $response_message = "Comando non riconosciuto";
 $parse_mode = "Markdown";
 
@@ -52,7 +52,7 @@ if ( $text == "/news" ) {
     $response_message .= "<a href='http://confienza.between.it/telegramdemo/leggi_news.php?id='". $una_news->id ."' >Leggi</a>";
     $response_message .= "\n";
   }  // */
-  $response_message = print_r( $result_decoded );
+  $response_message = "Messaggio decodificato";
 }
 
 if ( $text == "/ricerca") {
