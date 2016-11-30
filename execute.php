@@ -64,9 +64,11 @@ if ( $text == "/ricerca") {
   echo json_encode($parameters);
 // */
 
+else 
+  $response_message = $result_from_server_confienza;
+
 header("Content-Type: application/json");
-//$parameters = array('chat_id' => $chatId, "text" => $result_from_server_confienza, parse_mode => $parse_mode);
-$parameters = array('chat_id' => $chatId, "text" => "--".$text."--", parse_mode => $parse_mode);
+$parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
 
