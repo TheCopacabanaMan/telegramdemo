@@ -39,7 +39,7 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
   $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";
 }  
-/*
+
 if ( $text == "/news" ) {
   $parse_mode = "HTML";
   $response_message = "";
@@ -62,14 +62,14 @@ if ( $text == "/ricerca") {
   $parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
   $parameters["method"] = "sendMessage";
   echo json_encode($parameters);
-// */
 
+/*
 else 
   $response_message = $result_from_server_confienza;
 
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
 $parameters["method"] = "sendMessage";
-echo json_encode($parameters);
+echo json_encode($parameters);  // */
 
 ?>
