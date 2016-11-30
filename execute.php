@@ -25,7 +25,8 @@ $text = strtolower($text);
   $result_from_server_confienza = file_get_contents($destination_url);
 
 // mettiamo un messaggio di default
-$response_message = "Comando non riconosciuto";
+//$response_message = "Comando non riconosciuto";
+$response_message = "";
 $parse_mode = "Markdown";
 
 if ( $text == "/start" || $text == "/help" ) {
