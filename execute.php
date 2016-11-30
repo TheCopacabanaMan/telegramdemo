@@ -27,7 +27,7 @@ $text = strtolower($text);
 // mettiamo un messaggio di default
 $response_message = "Comando non riconosciuto";
 $parse_mode = "Markdown";
-/*
+
 if ( $text == "/start" || $text == "/help" ) {
   $parse_mode = "HTML";
 
@@ -39,7 +39,7 @@ if ( $text == "/start" || $text == "/help" ) {
   $response_message .= "<a href='/news'>/news</a> - Mostra le news" . "\n";
   $response_message .= "<a href='/ricerca'>/ricerca</a> - Mostra la ricerca personale" . "\n";
 }  
-
+/*
 if ( $text == "/news" ) {
   $parse_mode = "HTML";
   $response_message = "";
