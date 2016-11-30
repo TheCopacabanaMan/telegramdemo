@@ -23,11 +23,11 @@ $text = strtolower($text);
   // mando la stringa ricevuta al server web
   $destination_url = "http://confienza.rman.eu/telegramdemo/register.php?first_name=". urlencode($firstname) ."&last_name=". urlencode($lastname) ."&command=". urlencode($text);
   $result_from_server_confienza = file_get_contents($destination_url);
-/*
+
 // mettiamo un messaggio di default
 $response_message = "Comando non riconosciuto";
 $parse_mode = "Markdown";
-
+/*
 if ( $text == "/start" || $text == "/help" ) {
   $parse_mode = "HTML";
 
@@ -65,7 +65,7 @@ if ( $text == "/ricerca") {
 // */
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $result_from_server_confienza);
+$parameters = array('chat_id' => $chatId, "text" => $result_from_server_confienza, parse_mode => $parse_mode);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
 
