@@ -2,6 +2,13 @@
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
+  header("Content-Type: application/json");
+  $parameters = array('chat_id' => $chatId, "text" => $update, parse_mode => "HTML");
+  $parameters["method"] = "sendMessage";
+  echo json_encode($parameters);
+
+
+/*
 if(!$update)
 {
   exit;
@@ -63,5 +70,7 @@ if ( $text == "/ricerca") {
   $parameters = array('chat_id' => $chatId, "text" => $response_message, parse_mode => $parse_mode);
   $parameters["method"] = "sendMessage";
   echo json_encode($parameters);
+// */
+
 
 ?>
