@@ -2,19 +2,10 @@
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
-  header("Content-Type: application/json");
-  $parameters = array('chat_id' => $chatId, "text" => $update, parse_mode => "HTML");
-  $parameters["method"] = "sendMessage";
-  echo json_encode($parameters);
-
-
-/*
 if(!$update)
 {
   exit;
 }
-
-
 
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
@@ -28,6 +19,8 @@ $text = isset($message['text']) ? $message['text'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
+
+/*
   // mando la stringa ricevuta al server web
   $destination_url = "http://confienza.rman.eu/telegramdemo/register.php?first_name=". urlencode($firstname) ."&last_name=". urlencode($lastname) ."&command=". urlencode($text);
   $result_from_server_confienza = file_get_contents($destination_url);
@@ -72,5 +65,9 @@ if ( $text == "/ricerca") {
   echo json_encode($parameters);
 // */
 
+header("Content-Type: application/json");
+$parameters = array('chat_id' => $chatId, "text" => $text);
+$parameters["method"] = "sendMessage";
+echo json_encode($parameters);
 
 ?>
